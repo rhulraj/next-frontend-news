@@ -17,7 +17,7 @@ export default async function fetchbyId ({params}){
     const data = await fetchById(id)
 
     return (
-        <div className="container text-black mx-10 mt-10 ">
+        <div className="container text-black mx-20 mt-10 ">
            
            
         <h1 className="page">{data.title}</h1>

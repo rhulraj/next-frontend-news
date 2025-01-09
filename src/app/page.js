@@ -1,5 +1,6 @@
 import axiosInstanse from "@/Helper/axiosInstance";
-import Image from "next/image";
+import Head from "next/head";
+import shield from '../assets/shield.png'
 import Link from "next/link";
 
 export async function fetchInfos() {
@@ -19,24 +20,42 @@ export default async function Home() {
   latest = latest.slice(0, 6);
 
   return (
+    <>
+    <Head>
+        <title>vedic facts</title>
+        <meta name="description" content=' information on koorm kshatriya vedic kshatriya maratha kamma patidar rajput koormi kurmi kamboj ror dangi ' />
+        <meta property="og:title" content="vedic facts" />
+        <meta property="og:description" content=' information on koorm kshatriya vedic kshatriya maratha kamma patidar rajput koormi kurmi kamboj ror dangi ' />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content='https://www.vedicinfos.in/' />
+        <meta property="og:image" content={shield} />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
     <div className="container mt-9">
+      
       <h1 className=" text-center mb-8"> Vedic Fact</h1>
 
-      <Link href={`/info/${data[0]._id}`}><div className="relative ">
-        <img src={data[0]?.image1 || null} alt="" className="m-auto lg:w-1/2" />
-        <h1 className="absolute left-1/2 bottom-3 text-white">
-          {data[0]?.title}
-        </h1>
-      </div>
+      <Link href={`/info/${data[0]._id}`}>
+        <div className="relative ">
+          <img
+            src={data[0]?.image1 || null}
+            alt=""
+            className="m-auto lg:w-1/2"
+          />
+          <h1 className="absolute left-1/2 bottom-3 text-white">
+            {data[0]?.title}
+          </h1>
+        </div>
       </Link>
       <div className="lg:w-3/4 m-auto">
         {data &&
           data.slice(1).map((el) => {
             return (
-              <Link href={`/info/${el._id}`}><div className="flex m-10 shadow-lg" key={el._id}>
-                <h1 className="mx-6  m-3">{el.title}</h1>
-                <img className="w-40 m-3" src={el.image1 || null} alt="" />
-              </div>
+              <Link href={`/info/${el._id}`}>
+                <div className="flex m-10 shadow-lg" key={el._id}>
+                  <h1 className="mx-6  m-3">{el.title}</h1>
+                  <img className="w-40 m-3" src={el.image1 || null} alt="" />
+                </div>
               </Link>
             );
           })}
@@ -49,21 +68,29 @@ export default async function Home() {
 
       <h1 className=" text-center mb-8"> Latest News</h1>
 
-     <Link href={`/latestnews/${latest[0]._id}`}> <div className="relative ">
-        <img src={latest[0]?.image1 || null} alt="" className="m-auto lg:w-1/2" />
-        <h1 className="absolute left-1/2 bottom-3 text-white">
-          {latest[0]?.title}
-        </h1>
-      </div>
+      <Link href={`/latestnews/${latest[0]._id}`}>
+        {" "}
+        <div className="relative ">
+          <img
+            src={latest[0]?.image1 || null}
+            alt=""
+            className="m-auto lg:w-1/2"
+          />
+          <h1 className="absolute left-1/2 bottom-3 text-white">
+            {latest[0]?.title}
+          </h1>
+        </div>
       </Link>
       <div className="lg:w-3/4 m-auto">
         {latest &&
           latest.slice(1).map((el) => {
             return (
-             <Link href={`/latestnews/${el._id}`}> <div className="flex m-10 shadow-lg" key={el._id}>
-                <h1 className="mx-6  m-3">{el.title}</h1>
-                <img className="w-40 m-3" src={el.image1 || null} alt="" />
-              </div>
+              <Link href={`/latestnews/${el._id}`}>
+                {" "}
+                <div className="flex m-10 shadow-lg" key={el._id}>
+                  <h1 className="mx-6  m-3">{el.title}</h1>
+                  <img className="w-40 m-3" src={el.image1 || null} alt="" />
+                </div>
               </Link>
             );
           })}
@@ -74,5 +101,6 @@ export default async function Home() {
         </Link>
       </div>
     </div>
+    </>
   );
 }

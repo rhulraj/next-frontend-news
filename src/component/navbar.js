@@ -16,18 +16,21 @@ export default function Navbar(){
           !isOpen
         )
     }
+    function menuOnClick(){
+      setOpen(false)
+    }
     
     
     return(<>
-       <nav className={`navbar bg-yellow-100 pb-6 mb-16`}>
+       <nav  className={`navbar bg-yellow-100 pb-6 mb-16`}>
            <div >
              <Image src={logo || null} alt="" className='w-10 h-10 m-auto logo'/>
-             <h1 className='heading  text-sm text-center '>Vedic Info</h1>
+             <h1 className='heading  text-sm text-center logotext '>Vedic Info</h1>
            </div>
            <button className='menu-toggle' onClick={handleMenu}><Image src={menu} alt="" /></button>
            <div className='flex justify-between px-7'>
             <div className='flex justify-between'>
-              <ul className={` ${isOpen ? 'open' :''} nav-links flex  text-lg lg:mx-60 sm:text-base`}>
+              <ul onClick={menuOnClick} className={` ${isOpen ? 'open' :''} nav-links flex  text-lg lg:mx-60 sm:text-base`}>
               <Link href={'/'}><li className='-'>Home</li> </Link>
                 <Link href={'/info'}><li className=''>Vedic facts</li></Link>
                 <Link href={'/latestnews'}><li className=''>Latest news</li></Link>
