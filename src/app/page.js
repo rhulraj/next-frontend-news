@@ -53,7 +53,7 @@ export default async function Home() {
             alt=""
             className="m-auto lg:w-1/2"
           />
-          <h1 className="absolute left-1/2 bottom-3 text-white">
+          <h1 className="absolute left-2 lg:left-80 bottom-3 text-white">
             {data[0]?.title}
           </h1>
         </div>
@@ -87,7 +87,7 @@ export default async function Home() {
             alt=""
             className="m-auto lg:w-1/2"
           />
-          <h1 className="absolute left-1/2 bottom-3 text-white">
+          <h1 className="absolute left-2 lg:left-80 bottom-3 text-white">
             {latest[0]?.title}
           </h1>
         </div>
