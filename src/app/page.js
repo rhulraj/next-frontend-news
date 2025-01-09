@@ -63,9 +63,9 @@ export default async function Home() {
           data.slice(1).map((el) => {
             return (
               <Link href={`/info/${el._id}`}>
-                <div className="flex m-10 shadow-lg" key={el._id}>
+                <div className="flex  shadow-lg lg:m-10" key={el._id}>
                   <h1 className="mx-6  m-3">{el.title}</h1>
-                  <img className="w-40 m-3" src={el.image1 || null} alt="" />
+                  <img className="w-40 m-3 iconimg" src={el.image1 || null} alt="" />
                 </div>
               </Link>
             );
@@ -98,9 +98,9 @@ export default async function Home() {
             return (
               <Link href={`/latestnews/${el._id}`}>
                 {" "}
-                <div className="flex m-10 shadow-lg" key={el._id}>
+                <div className="flex  shadow-lg lg:m-10" key={el._id}>
                   <h1 className="mx-6  m-3">{el.title}</h1>
-                  <img className="w-40 m-3" src={el.image1 || null} alt="" />
+                  <img className="w-40 m-3 iconimg" src={el.image1 || null} alt="" />
                 </div>
               </Link>
             );
