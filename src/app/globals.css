@@ -6,6 +6,24 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+.container{
+  width: 70%;
+  margin:0 15%;
+}
+h1{
+  font-weight: 700;
+  font-size: large;
+}
+
+
+@media (max-width: 768px) {
+  .container{
+      width: 100%;
+      margin: 0;
+  }
+ 
+ 
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
