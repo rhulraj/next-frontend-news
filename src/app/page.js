@@ -22,7 +22,7 @@ export default async function Home() {
     <div className="container mt-9">
       <h1 className=" text-center mb-8"> Vedic Fact</h1>
 
-      <Link href={`/infos/${data[0]._id}`}><div className="relative ">
+      <Link href={`/info/${data[0]._id}`}><div className="relative ">
         <img src={data[0]?.image1 || null} alt="" className="m-auto lg:w-1/2" />
         <h1 className="absolute left-1/2 bottom-3 text-white">
           {data[0]?.title}
@@ -33,7 +33,7 @@ export default async function Home() {
         {data &&
           data.slice(1).map((el) => {
             return (
-              <Link href={`/infos/${el._id}`}><div className="flex m-10 shadow-lg" key={el._id}>
+              <Link href={`/info/${el._id}`}><div className="flex m-10 shadow-lg" key={el._id}>
                 <h1 className="mx-6  m-3">{el.title}</h1>
                 <img className="w-40 m-3" src={el.image1 || null} alt="" />
               </div>
@@ -49,7 +49,7 @@ export default async function Home() {
 
       <h1 className=" text-center mb-8"> Latest News</h1>
 
-     <Link href={`/news/${latest[0]._id}`}> <div className="relative ">
+     <Link href={`/latestnews/${latest[0]._id}`}> <div className="relative ">
         <img src={latest[0]?.image1 || null} alt="" className="m-auto lg:w-1/2" />
         <h1 className="absolute left-1/2 bottom-3 text-white">
           {latest[0]?.title}
@@ -60,7 +60,7 @@ export default async function Home() {
         {latest &&
           latest.slice(1).map((el) => {
             return (
-             <Link href={`/news/${el._id}`}> <div className="flex m-10 shadow-lg" key={el._id}>
+             <Link href={`/latestnews/${el._id}`}> <div className="flex m-10 shadow-lg" key={el._id}>
                 <h1 className="mx-6  m-3">{el.title}</h1>
                 <img className="w-40 m-3" src={el.image1 || null} alt="" />
               </div>
