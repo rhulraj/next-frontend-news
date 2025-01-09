@@ -10,6 +10,30 @@ async function fetchById(id){
     }
 
 }
+export async function generateMetadata({params}){
+    const reslovedParams = await params
+    const id  = reslovedParams.id
+    const data = await fetchById(id)
+    return{
+      title: data.title,
+      description:data.body1,
+      openGraph: {
+        title: data.title,
+        description: data.body1,
+        url: `https://www.vedicinfos.in/info/${data._id}`, // Replace with your URL
+        type: "website",
+        images: [
+          {
+            url: data.image1, // Replace with your image URL
+            width: 800,
+            height: 600,
+            alt: "Vedic Infos",
+          },
+        ],
+      },
+          
+    }
+ }
 
 export default async function fetchbyId ({params}){
     const resolvedParams = await params

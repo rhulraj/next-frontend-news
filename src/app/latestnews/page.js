@@ -13,6 +13,29 @@ async function fetchInfo (){
 }
 
 
+export function generateMetadata({params}){
+   return{
+     title: "latest news",
+     description:"koorm kshtriya vedic kshatriya rajput kamma patidar maratha kamboj ror",
+     openGraph: {
+       title: "latest news",
+       description: "koorm kshtriya vedic kshatriya rajput kamma patidar maratha kamboj ror",
+       url: "https://www.vedicinfos.in/latestnews", // Replace with your URLś
+       type: "website",
+       images: [
+         {
+           url: "https://res.cloudinary.com/dyufylq1y/image/upload/v1736432155/shield_16449784_kjcpap.png", // Replace with your image URL
+           width: 800,
+           height: 600,
+           alt: "Vedic Infos",
+         },
+       ],
+     },
+         
+   }
+}
+
+
 
 async function Latest(){
 

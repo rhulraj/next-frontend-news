@@ -12,7 +12,28 @@ async function fetchNews() {
   const response = await axiosInstanse.get("/news/latest");
   return response.data.data;
 }
+export function generateMetadata({params}){
+  return{
+    title: "vedic infos",
+    description:"koorm kshtriya vedic kshatriya rajput kamma patidar maratha kamboj ror",
+    openGraph: {
+      title: "vedic infos",
+      description: "koorm kshtriya vedic kshatriya rajput kamma patidar maratha kamboj ror",
+      url: "https://www.vedicinfos.in", // Replace with your URL
+      type: "website",
+      images: [
+        {
+          url: "https://res.cloudinary.com/dyufylq1y/image/upload/v1736432155/shield_16449784_kjcpap.png", // Replace with your image URL
+          width: 800,
+          height: 600,
+          alt: "Vedic Infos",
+        },
+      ],
+    },
+        
+  }
 
+}
 export default async function Home() {
   let data = await fetchInfos();
   data = data.slice(0, 6);
@@ -21,16 +42,6 @@ export default async function Home() {
 
   return (
     <>
-    <Head>
-        <title>vedic facts</title>
-        <meta name="description" content=' information on koorm kshatriya vedic kshatriya maratha kamma patidar rajput koormi kurmi kamboj ror dangi ' />
-        <meta property="og:title" content="vedic facts" />
-        <meta property="og:description" content=' information on koorm kshatriya vedic kshatriya maratha kamma patidar rajput koormi kurmi kamboj ror dangi ' />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content='https://www.vedicinfos.in/' />
-        <meta property="og:image" content={shield} />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
     <div className="container mt-9">
       
       <h1 className=" text-center mb-8"> Vedic Fact</h1>
