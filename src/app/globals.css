@@ -14,10 +14,10 @@
 h1{
   font-weight: 700;
   font-size: large;
-  line-height: 40px;
+  line-height: 30px;
 }
 .page{
-  line-height: 40px;
+  line-height: 35px;
   font-size: medium;
   
 }
@@ -28,14 +28,13 @@ h1{
       width: 90%;
       margin: 20px;
       margin-top: 25%;
-      overflow-x: hidden;
   }
   .iconimg{
     width: 80px;
     height: 60px;
   }
   .page{
-    line-height: 35px;
+    line-height: 30px;
     
    
   }

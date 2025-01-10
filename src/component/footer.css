@@ -9,17 +9,17 @@ li:hover{
 @media (max-width: 768px) {
     
     h1{
-        font-size: large;
+        font-size: small;
         font-weight: 600;
     }
     li{
-        font-size: 14px;
+        font-size: 10px;
     }
     .img{
         width:30px
     }
     p{
-        font-size: 14px;
+        font-size: 10px;
     }
    
 }

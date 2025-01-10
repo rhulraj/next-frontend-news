@@ -48,17 +48,18 @@ export default async function Home() {
 
       <Link href={`/info/${data[0]._id}`}>
         <div className="relative ">
+        <h1 className=" text-black bottom-3 ">
+            {data[0]?.title}
+          </h1>
           <img
             src={data[0]?.image1 || null}
             alt=""
             className="m-auto lg:w-1/2"
           />
-          <h1 className="absolute left-2 lg:left-80 bottom-3 text-white">
-            {data[0]?.title}
-          </h1>
+          
         </div>
       </Link>
-      <div className="lg:w-3/4 m-auto">
+      <div className="lg:w-3/4 m-auto my-8">
         {data &&
           data.slice(1).map((el) => {
             return (
@@ -82,17 +83,18 @@ export default async function Home() {
       <Link href={`/latestnews/${latest[0]._id}`}>
         {" "}
         <div className="relative ">
+        <h1 className="">
+            {latest[0]?.title}
+          </h1>
           <img
             src={latest[0]?.image1 || null}
             alt=""
             className="m-auto lg:w-1/2"
           />
-          <h1 className="absolute left-2 lg:left-80 bottom-3 text-white">
-            {latest[0]?.title}
-          </h1>
+          
         </div>
       </Link>
-      <div className="lg:w-3/4 m-auto">
+      <div className="lg:w-3/4 m-auto my-8">
         {latest &&
           latest.slice(1).map((el) => {
             return (
