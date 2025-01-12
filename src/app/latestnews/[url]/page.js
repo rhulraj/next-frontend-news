@@ -1,10 +1,13 @@
 const { default: axiosInstanse } = require("@/Helper/axiosInstance");
 
 
-async function fetchById(id){
+async function fetchById(url){
     try{
-        const response = await axiosInstanse.get(`/infos/${id}`)
-        return response.data.data
+        const response = await axiosInstanse.get(`/news/${url}`)
+        if(!response){
+          return "something went wrong "
+        }
+        return response?.data.data
     }catch(err){
         console.log(err);
     }
@@ -12,15 +15,17 @@ async function fetchById(id){
 }
 export async function generateMetadata({params}){
     const reslovedParams = await params
-    const id  = reslovedParams.id
-    const data = await fetchById(id)
+    const url = reslovedParams.url
+
+    const data = await fetchById(url)
+
     return{
       title: data.title,
       description:data.body1,
       openGraph: {
         title: data.title,
         description: data.body1,
-        url: `https://www.vedicinfos.in/info/${data._id}`, // Replace with your URL
+        url: `https://www.vedicinfos.in/info${data.url}`, // Replace with your URL
         type: "website",
         images: [
           {
@@ -37,11 +42,11 @@ export async function generateMetadata({params}){
 
 export default async function fetchbyId ({params}){
     const resolvedParams = await params
-    const id = resolvedParams.id
-    const data = await fetchById(id)
+    const url = resolvedParams.url
+    const data = await fetchById(url)
 
     return (
-        <div className="container text-black mx-20 mt-10 ">
+        <div className="container text-black mx-10 mt-10 ">
            
            
         <h1 className="page">{data.title}</h1>

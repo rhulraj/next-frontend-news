@@ -6,7 +6,10 @@ import Link from "next/link";
 async function fetchInfo (){
    try{
        const response = await axiosInstanse.get('/infos')
-       return response.data.data
+       if(!response){
+        return "something went wrong "
+      }
+       return response?.data.data
    }catch(err){
         console.log(err)
    }
@@ -16,6 +19,7 @@ export function generateMetadata({params}){
    return{
      title: "vedic infos",
      description:"koorm kshtriya vedic kshatriya rajput kamma patidar maratha kamboj ror",
+     keywords: "koorm kshatriya, vedic kshatriya, rajput, patidar, maratha, kamboj, kamma, kapu, awadhiya, jaiswar, gangwar, katiyar, sainthwar, ror, singror, chandel, patanwar, rathor, gaharwar,",
      openGraph: {
        title: "vedic infos",
        description: "koorm kshtriya vedic kshatriya rajput kamma patidar maratha kamboj ror",
@@ -92,7 +96,7 @@ async function Info(){
          <h1 className="text-center ">Vedic Facts</h1>
          {data && data.map(el=>{
             return(
-              <Link href={`/info/${el._id}`}> <div className="flex  shadow-lg" key={el._id} >
+              <Link href={`/info/${el.url}`}> <div className="flex  shadow-lg" key={el.url} >
                   <h1 className="mx-2  m-3">{el.title}</h1>
                   <img className="w-40 m-3 iconimg" src={el.image1 || null} alt="" />
                 </div>

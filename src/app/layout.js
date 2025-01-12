@@ -14,17 +14,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "vedic information",
+  metadataBase : new URL("https://www.vedicinfos.in"),
+  title: {
+    default: "vedic gyan",
+    template: `%s | vedic gyan`
+  },
   description: "information on vedic kshatriya , koorm kshatriya",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1866825678952699"
+      {process.env.NODE_ENV==="production" && (
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1866825678952699"
      crossOrigin="anonymous">
-
-     </script>
+      </script>)}
      <meta name="google-adsense-account" content="ca-pub-1866825678952699"></meta>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

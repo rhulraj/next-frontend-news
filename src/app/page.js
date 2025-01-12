@@ -1,21 +1,26 @@
 import axiosInstanse from "@/Helper/axiosInstance";
-import Head from "next/head";
-import shield from '../assets/shield.png'
 import Link from "next/link";
 
 export async function fetchInfos() {
   const response = await axiosInstanse.get("/infos");
-  return response.data.data;
+  if(!response){
+    return "something went wrong"
+  }
+  return response?.data.data;
 }
 
-async function fetchNews() {
+export async function fetchNews() {
   const response = await axiosInstanse.get("/news/latest");
-  return response.data.data;
+  if(!response){
+    return "something went wrong "
+  }
+  return response?.data.data;
 }
 export function generateMetadata({params}){
   return{
-    title: "vedic infos",
-    description:"koorm kshtriya vedic kshatriya rajput kamma patidar maratha kamboj ror",
+    title: "vedic gyan",
+    description:"vedic gyan koorm kshtriya vedic kshatriya rajput kamma patidar maratha kamboj ror",
+    keywords: "koorm kshatriya, vedic kshatriya, rajput, patidar, maratha, kamboj, kamma, kapu, awadhiya, jaiswar, gangwar, katiyar, sainthwar, ror, singror, chandel, patanwar, rathor, gaharwar,",
     openGraph: {
       title: "vedic infos",
       description: "koorm kshtriya vedic kshatriya rajput kamma patidar maratha kamboj ror",
@@ -46,7 +51,7 @@ export default async function Home() {
       
       <h1 className=" text-center mb-8"> Vedic Fact</h1>
 
-      <Link href={`/info/${data[0]._id}`}>
+      <Link href={`/info/${data[0].url}`}>
         <div className="relative ">
         <h1 className=" text-black bottom-3 ">
             {data[0]?.title}
@@ -63,7 +68,7 @@ export default async function Home() {
         {data &&
           data.slice(1).map((el) => {
             return (
-              <Link href={`/info/${el._id}`}>
+              <Link href={`/info/${el.url}`}>
                 <div className="flex  shadow-lg lg:m-10" key={el._id}>
                   <h1 className="mx-6  m-3">{el.title}</h1>
                   <img className="w-40 m-3 iconimg" src={el.image1 || null} alt="" />
@@ -80,7 +85,7 @@ export default async function Home() {
 
       <h1 className=" text-center mb-8"> Latest News</h1>
 
-      <Link href={`/latestnews/${latest[0]._id}`}>
+      <Link href={`/latestnews/${latest[0].url}`}>
         {" "}
         <div className="relative ">
         <h1 className="">
@@ -98,7 +103,7 @@ export default async function Home() {
         {latest &&
           latest.slice(1).map((el) => {
             return (
-              <Link href={`/latestnews/${el._id}`}>
+              <Link href={`/latestnews/${el.url}`}>
                 {" "}
                 <div className="flex  shadow-lg lg:m-10" key={el._id}>
                   <h1 className="mx-6  m-3">{el.title}</h1>
