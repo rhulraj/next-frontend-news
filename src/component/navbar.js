@@ -22,7 +22,7 @@ export default function Navbar(){
     
     
     return(<>
-       <nav  className={`navbar bg-yellow-100 pb-6 mb-16`}>
+       <nav  className={`navbar bg-[#d8efda] pb-6 mb-16`}>
            <div >
              <Image src={logo || null} alt="" className='w-10 h-10 m-auto logo'/>
              <h1 className='heading  text-sm text-center logotext '>Vedic Info</h1>

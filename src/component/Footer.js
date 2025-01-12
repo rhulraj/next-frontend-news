@@ -10,7 +10,7 @@ import Image from 'next/image'
 export default function Footer(){
     return(
         <>
-           <div className='bg-zinc-500  py-4 flex justify-around'>
+           <div className='bg-[#163a65]  py-4 flex justify-around text-gray-300 mt-10'>
                <div>
                  <Image src={logo || null} alt="" className='w-14 ml-3' />
                  <h1 className=' '>Vedic Info</h1>

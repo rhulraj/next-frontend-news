@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono ,Roboto_Serif} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/component/navbar";
 import Footer from "@/component/Footer";
@@ -7,6 +7,10 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
+const robotoSerif = Roboto_Serif({
+  variable: "--font-roboto-serif",
+  subsets: ["latin"]
+})
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -31,7 +35,7 @@ export default function RootLayout({ children }) {
       </script>)}
      <meta name="google-adsense-account" content="ca-pub-1866825678952699"></meta>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${robotoSerif.variable} antialiased`}
       >
         <Navbar/>
         {children}

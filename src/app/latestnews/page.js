@@ -92,13 +92,13 @@ async function Latest(){
    //   },[])
 
     return(<>
-      <div className="container font-serif shadow-lg  ">
+      <div className="container font-serif shadow-lg ">
          
       {/* <HemlmetMeta url={'https://vedicinfos.in/info'} image={logo || null} title={'vedic kshatriya'} description={'vedic information of kshatriyas and news keep you update '}/> */}
          <h1 className="text-center ">Latest News</h1>
          {data && data.map(el=>{
             return(
-              <Link href={`/info/${el.url}`}> <div className="flex  shadow-lg" key={el.url} >
+              <Link href={`/info/${el.url}`}> <div className="flex  shadow-lg border-t-8" key={el.url} >
                   <h1 className="mx-2 m-3">{el.title}</h1>
                   <img className="w-40 m-3 iconimg" src={el.image1 || null} alt="" />
                 </div>

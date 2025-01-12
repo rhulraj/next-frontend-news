@@ -69,7 +69,7 @@ export default async function Home() {
           data.slice(1).map((el) => {
             return (
               <Link href={`/info/${el.url}`}>
-                <div className="flex  shadow-lg lg:m-10" key={el._id}>
+                <div className="flex  shadow-xl lg:m-10 border-t-8" key={el._id}>
                   <h1 className="mx-6  m-3">{el.title}</h1>
                   <img className="w-40 m-3 iconimg" src={el.image1 || null} alt="" />
                 </div>
@@ -77,7 +77,7 @@ export default async function Home() {
             );
           })}
         <Link href={"/info"}>
-          <h2 className="mt-4 mx-auto bg-lime-500 w-20 text-center mb-14">
+          <h2 className="mt-4 mx-auto text-gray-50 bg-[#0080c9]  rounded-md w-20 text-center mb-14">
             View All
           </h2>
         </Link>
@@ -105,7 +105,7 @@ export default async function Home() {
             return (
               <Link href={`/latestnews/${el.url}`}>
                 {" "}
-                <div className="flex  shadow-lg lg:m-10" key={el._id}>
+                <div className="flex  shadow-xl border-t-8 lg:m-10" key={el._id}>
                   <h1 className="mx-6  m-3">{el.title}</h1>
                   <img className="w-40 m-3 iconimg" src={el.image1 || null} alt="" />
                 </div>
@@ -113,7 +113,7 @@ export default async function Home() {
             );
           })}
         <Link href={"/latestnews"}>
-          <h2 className="mt-4 mx-auto bg-lime-500 w-20 text-center mb-14">
+          <h2 className="mt-4 mx-auto text-gray-50 bg-[#0080c9]  rounded-md shadow-xl w-20 text-center mb-14">
             View All
           </h2>
         </Link>

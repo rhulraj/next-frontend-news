@@ -14,11 +14,17 @@
 h1{
   font-weight: 700;
   font-size: large;
-  line-height: 30px;
+  line-height: 40px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .page{
-  line-height: 35px;
+  line-height: 30px;
   font-size: medium;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+li{
+  font-family: 'Times New Roman', Times, serif;
   
 }
 
