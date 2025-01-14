@@ -68,12 +68,14 @@ export default async function Home() {
         {data &&
           data.slice(1).map((el) => {
             return (
-              <Link href={`/info/${el.url}`}>
+              
                 <div className="flex  shadow-xl lg:m-10 border-t-8" key={el._id}>
+                  <Link href={`/info/${el.url}`}>
                   <h1 className="mx-6  m-3">{el.title}</h1>
                   <img className="w-40 m-3 iconimg" src={el.image1 || null} alt="" />
+                  </Link>
                 </div>
-              </Link>
+            
             );
           })}
         <Link href={"/info"}>
@@ -103,13 +105,15 @@ export default async function Home() {
         {latest &&
           latest.slice(1).map((el) => {
             return (
-              <Link href={`/latestnews/${el.url}`}>
-                {" "}
+              
                 <div className="flex  shadow-xl border-t-8 lg:m-10" key={el._id}>
+                  <Link href={`/latestnews/${el.url}`}>
+                  {" "}
                   <h1 className="mx-6  m-3">{el.title}</h1>
                   <img className="w-40 m-3 iconimg" src={el.image1 || null} alt="" />
+                  </Link>
                 </div>
-              </Link>
+              
             );
           })}
         <Link href={"/latestnews"}>

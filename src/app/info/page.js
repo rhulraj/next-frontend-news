@@ -96,11 +96,13 @@ async function Info(){
          <h1 className="text-center ">Vedic Facts</h1>
          {data && data.map(el=>{
             return(
-              <Link href={`/info/${el.url}`}> <div className="flex  shadow-lg border-t-8" key={el.url} >
+               <div className="flex  shadow-lg border-t-8" key={el._id} >
+                <Link href={`/info/${el.url}`}>
                   <h1 className="mx-2  m-3">{el.title}</h1>
                   <img className="w-40 m-3 iconimg" src={el.image1 || null} alt="" />
+                  </Link>
                 </div>
-                </Link>
+                
             )
          })}
       </div>
